@@ -9,8 +9,8 @@ button {
     display: flex;
     text-decoration: none;
     background: none;
-    outline: none;
     border: none;
+    cursor: pointer;
 }
 
 a {
@@ -92,6 +92,10 @@ header {
 main {
     margin: 0;
     background-color: #F8F8F8;
+}
+
+label {
+    cursor: pointer;
 }
 
 .title__text {
@@ -195,7 +199,7 @@ main {
 }
 
 .main-page__read-more-button {
-    display: flex;
+    display: inline-flex;
     gap: 8px;
     box-sizing: border-box;
     margin: 16px 0 auto 16px;
@@ -375,7 +379,6 @@ main {
     }
 
     .main-page__img {
-        max-width: 681px;
         margin: 0;
         margin-right: 29px;
     }
