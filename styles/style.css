@@ -42,6 +42,7 @@ header {
     justify-content: space-around;
     padding: 0;
     margin: 0;
+    gap: 16px;
 }
 
 .upper-menu__button {
@@ -53,31 +54,31 @@ header {
     align-items: center;
     justify-content: center;
     padding: 0;
+    transition: 1s;
 }
 
 .upper-menu__button:hover {
     background-color: #92153b;
     transform: scale(1.1);
-    transition: 1s;
 }
 
 .upper-menu__left .upper-menu__button {
     margin-left: 16px;
-    margin-right: 17px;
 }
 
-.upper-menu__repairing {
-    display: flex;
-    gap: 16px;
+.upper-menu__right_repairing {
+    position: relative;
+}
+
+.upper-menu__right_repairing li:last-child {
     margin-right: 16px;
-    position: relative
 }
 
-.upper-menu__contacts {
+.upper-menu__right_contacts li {
     display: none;
 }
 
-.upper-menu__repairing::before {
+.upper-menu__right_repairing::before {
     content: "";
     width: 2px;
     height: 32px;
@@ -166,20 +167,17 @@ main {
 
 .main-page__content {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     font-size: 14px;
     line-height: 18px;
 }
 
 .main-page__content_text {
-    display: flex;
+    display: inline-block;
     gap: 20px;
     flex-direction: column;
     margin: 0;
     margin-left: 16px;
-    height: 15vh;
+    height: 90px;
     line-height: 18px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -188,14 +186,19 @@ main {
 
 .main-page__info {
     margin: 0;
+    display: flex;
+    padding-right: 16px;
 }
 
+.main-page__info:first-of-type {
+    margin-bottom: 20px;
+}
 
 .main-page__read-more-button {
     display: flex;
     gap: 8px;
     box-sizing: border-box;
-    margin: 16px 0 16px 16px;
+    margin: 16px 0 auto 16px;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -207,17 +210,24 @@ main {
     margin: 8px;
 }
 
+.main-page__img {
+    margin-top: 16px;
+}
+
 @media (min-width:768px) {
     .upper-menu {
         margin-right: 15px;
     }
 
-    .upper-menu__left .upper-menu__button {
-        margin-left: 24px;
-        margin-right: 43px;
+    .upper-menu .upper-menu__left {
+        gap: 43px;
     }
 
-    .upper-menu__repairing {
+    .upper-menu__left .upper-menu__button {
+        margin-left: 24px;
+    }
+
+    .upper-menu__right_repairing li:last-child {
         margin-right: 24px;
     }
 
@@ -232,9 +242,12 @@ main {
         left: 84px;
     }
 
-    .upper-menu__contacts {
+    .upper-menu__right_contacts li {
         display: flex;
-        gap: 16px;
+    }
+
+    .upper-menu__right.upper-menu__right_contacts {
+        margin-left: auto;
         margin-right: 40px;
     }
 
@@ -255,7 +268,6 @@ main {
     .main-page {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-bottom: 40px;
         margin-right: 25px;
         box-sizing: border-box;
 
@@ -267,13 +279,22 @@ main {
         margin: 0 48px 0 24px;
     }
 
+    .main-page__info {
+        padding: 0;
+    }
+
     .slide-menu_gradient {
         top: 179px;
         right: 15px;
     }
 
     .main-page__read-more-button {
-        margin: 10px 0px 57px 25px;
+        margin: 10px 0px 0 25px;
+    }
+
+    .main-page__img {
+        border-radius: 5px;
+        margin: 0;
     }
 
 }
@@ -292,6 +313,12 @@ main {
         display: flex;
         align-items: center;
         box-sizing: border-box;
+    }
+
+    .title__right {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
     }
 
     .title__button-text,
@@ -320,16 +347,16 @@ main {
         justify-content: center;
         padding: 0;
         margin-right: 32px;
+        transition: 1s;
     }
 
     .title__button:hover {
         background-color: #92153b;
         transform: scale(1.1);
-        transition: 1s;
     }
 
     .title__text {
-        margin: 42px 444px 8px 0;
+        margin: 42px 0px 8px 0;
         padding-left: 30px;
     }
 
@@ -339,16 +366,17 @@ main {
     }
 
     .main-page__content_text {
+        height: auto;
         margin: 0 36px 0 34px;
     }
 
     .main-page__read-more-button {
-        margin-left: 32px;
-        margin-top: 14px;
+        margin: 14px 0 0 32px;
     }
 
     .main-page__img {
-        max-width: 531px;
+        max-width: 681px;
+        margin: 0;
         margin-right: 29px;
     }
 
