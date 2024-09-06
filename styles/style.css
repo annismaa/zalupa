@@ -30,10 +30,6 @@ ul {
     padding: 0;
 }
 
-li {
-    display: flex;
-}
-
 .left-menu {
     display: flex;
     flex-direction: column;
@@ -68,7 +64,7 @@ a[href^="tel:"] {
     gap: 18px;
 }
 
-.upper-menu__button {
+.button {
     display: flex;
     background-color: #FF3E79;
     width: 40px;
@@ -78,11 +74,33 @@ a[href^="tel:"] {
     justify-content: center;
     padding: 0;
     transition: 1s;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 
-.upper-menu__button:hover {
+.button:hover {
     background-color: #92153b;
     transform: scale(1.1);
+}
+
+.close-icon {
+    background-image: url("../icons/close.svg");
+}
+
+.search-icon {
+    background-image: url("../icons/search.svg");
+}
+
+.call-icon {
+    background-image: url("../icons/call.svg");
+}
+
+.chat-icon {
+    background-image: url("../icons/chat.svg");
+}
+
+.profile-icon {
+    background-image: url("../icons/profile.svg");
 }
 
 .left-menu__top li:last-child {
@@ -99,6 +117,7 @@ a[href^="tel:"] {
 }
 
 .left-menu__main li {
+    display: flex;
     height: 100%;
 }
 
@@ -107,10 +126,12 @@ a[href^="tel:"] {
     font-size: 16px;
     line-height: 24px;
     height: 24px;
+
 }
 
 .left-menu__main__section:hover {
     color: #7E7E82;
+    position: relative;
 }
 
 .left-menu__main__section:hover::before {
@@ -119,10 +140,9 @@ a[href^="tel:"] {
     height: 32px;
     background-color: #41F6D7;
     border-radius: 4px;
-    position: relative;
+    position: absolute;
     left: -28px;
     top: -4px;
-    box-sizing: border-box;
 }
 
 .left-menu__footer {
